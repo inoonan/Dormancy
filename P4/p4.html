@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+
+<!--
+FILE NAME: p4.html
+WRITTEN BY: Belle Noonan
+DUE DATE: Monday April 25
+PURPOSE: For CS220, P3
+-->
+
+<html>
+    <head>
+        <title>Dormancy</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+            <link rel="stylesheet" type="text/css" href="p4.css">
+            <link rel="stylesheet" href="themes/d.min.css" />
+            <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.0/jquery.mobile-1.4.0.min.css" />
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+            <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+            <script src="http://code.jquery.com/mobile/1.4.0/jquery.mobile-1.4.0.min.js"></script>
+           
+
+    </head>
+    
+    <body>
+        <!-- ************************FRIEND FEED ***********************-->
+            <div data-role="page" id="feed" data-theme="b">
+            <div data-role="header"  data-position="inline">
+                <h1>Dormancy</h1>
+                <a href="#prof1" id="btnstyle" class="ui-btn ui-btn-right ui-icon-user ui-btn-icon-right">115</a>
+            </div>
+                
+            <div role="content" class="ui-content">
+                <h2>FriendFeed</h2>
+                
+                <ul data-role="listview" data-inset="true">
+                    <li><a href="#prof3" id="btnstyle"><img src="moon.png" height="50" class="ui-li-icon"><b>Belle</b> is asleep <span class="ui-li-count">10:36pm</span></a></li>
+                    <li><a href="#prof4" id="btnstyle"><img src="sun.png" class="ui-li-icon"><b>Zoe</b> is awake<span class="ui-li-count">2:00am</span></a></li>
+                    <li><a href="#prof2" id="btnstyle"><img src="sun.png" class="ui-li-icon"><b>Sarah</b> is awake<span class="ui-li-count">1:35am</span></a></li>
+                    <li><a href="#prof1" id="btnstyle"><img src="moon.png"  class="ui-li-icon"><b>Michelle</b> is asleep <span class="ui-li-count">10:42pm</span></a></li>
+                    <li><a href="#prof3" id="btnstyle"><img src="sun.png"  class="ui-li-icon"><b>Belle</b> is awake <span class="ui-li-count">12:34am</span></a></li>
+                    <li><a href="#prof2" id="btnstyle"><img src="sun.png"  class="ui-li-icon"><b>Sarah</b> is awake<span class="ui-li-count">3:45am</span></a></li>
+                    <li><a href="#prof5" id="btnstyle"><img src="moon.png"  class="ui-li-icon"><b>Jeremy</b> is asleep <span class="ui-li-count">11:28pm</span></a></li>
+                    <li><a href="#prof2" id="btnstyle"><img src="sun.png"  class="ui-li-icon"><b>Sarah</b> is awake <span class="ui-li-count">1:37am</span></a></li>
+                    <li><a href="#prof1" id="btnstyle"><img src="moon.png"  class="ui-li-icon"><b>Michelle</b> is asleep <span class="ui-li-count">12:34am</span></a></li>
+                </ul>
+          
+            </div><!-- /content -->
+
+            <div data-role="footer">
+                
+                <div data-role="navbar" class = "navbar">
+                    <ul>
+                        <li> <a href="#feed" id="current" data-icon="home">Friends</a>
+                        <li> <a href="#checkin5" id="navlink"  data-rel="popup" data-icon="clock">Check In</a>
+                            <div data-role="popup" data-overlay-theme="a" id="checkin5" data-position-to="window" class="ui-content ui-btn-inline" data-position-to="window" style="max-width:270px;">
+                                <p> <b>Goodnight!</b>
+                                <p>You checked in at 11:30pm</p>
+                                <p> You got 5 points! </p>
+                                <a href="#feed" id="backfrompop" class="ui-btn">Undo</a>
+                                <a href="#feed" id="backfrompop" class="ui-btn">Goodnight!</a>
+                            </div>
+                        <li> <a href="#goals" id="navlink" data-icon="bullets">My Goals</a>
+                    </ul>
+                </div>
+            </div>
+            </div>
+
+        
+        <!-- ***********************Start of Alarm Page*********************** -->
+        <div data-role="page" id="goals" data-theme="b">
+            <div data-role="header" data-position="inline">
+                <a data-icon="arrow-l" class="back" id="btnstyle" data-rel="back" back-btn="true">Back</a>
+                <h1>Dormancy</h1>
+                <a href="#prof1" id="btnstyle" class="ui-btn ui-btn-right ui-icon-user ui-btn-icon-right">115</a>
+            </div>
+            <div role="content" class="ui-content">
+
+            <div id="rembtns">
+                <a href="#rem" id="rembtn" class="ui-btn ui-btn-inline">Calculate REM</a> 
+                <a href="#rempopup" id="btnstyle" class="ui-btn ui-btn-inline" data-rel="popup">?</a>
+            </div>
+                
+            <div data-role="popup" id="rempopup" class="ui-content" data-position-to="window" style="max-width:270px;">
+                    <br><p> REM stands for Rapid Eye Movement and occurs during sleep in cycles of about 90-120 minutes throughout the night. It is best to wake up inbetween REM cycles, the lightest point of sleep. Waking up between REM cycles will leave you feeling refreshed and less groggy than if you were to wake up in the middle of a REM cycle.
+                    <br><br>
+            </div>
+
+            <a href="#newgoal" id="newgoalbtn" class="ui-btn">Set New Goal</a>
+
+            <form id="check">
+                <fieldset data-role="controlgroup">
+                    <legend>Past Goals:</legend>
+                    <input type="checkbox" name="checkbox-1" id="checkbox-1">
+                    <label for="checkbox-1" id="checkstyle">sleep at 12:30 am</label>
+                    <input type="checkbox" name="checkbox-2" id="checkbox-2">
+                    <label for="checkbox-2" id="checkstyle">wake up at 8:00 am</label>
+                    <input type="checkbox" name="checkbox-3" id="checkbox-3">
+                    <label for="checkbox-3" id="checkstyle">wake up at 11:00 am</label>
+                    <input type="checkbox" name="checkbox-4" id="checkbox-4">
+                    <label for="checkbox-4" id="checkstyle">sleep at 10:30 pm</label>
+                    <input type="checkbox" name="checkbox-5" id="checkbox-5">
+                    <label for="checkbox-5" id="checkstyle">sleep at 2:30 am</label>
+                    <input type="checkbox" name="checkbox-6" id="checkbox-6">
+                    <label for="checkbox-6" id="checkstyle" >wake up at 9:00 am</label>
+                </fieldset>
+            </form>
+
+            <br> <br> 
+            </div>
+          
+            
+            <div data-role="footer">
+            <div data-role="navbar" class = "navbar">
+            	<ul>
+            		<li> <a href="#feed" id="navlink" data-icon='home'>Friends</a>
+            		 <li> <a href="#checkin1"  id="navlink" data-rel="popup" data-icon="clock">Check In</a>
+                          <div data-role="popup" data-overlay-theme="a" id="checkin1" data-position-to="window" class="ui-content ui-btn-inline" style="max-width:270px;">
+                                <p> <b>Goodnight!</b>
+                                <p>You checked in at 11:30pm</p>
+                                <p> You got 5 points! </p>
+                                <a href="#goals" id="backfrompop" class="ui-btn">Undo</a>
+                                <a href="#goals" id="backfrompop" class="ui-btn">Goodnight!</a>
+                        </div>
+            		<li> <a href="#goals" id="current" data-icon="bullets">My Goals</a>
+            	</ul>
+            </div>
+            </div>
+        </div>
+
+        <!-- ************************Start of New Goal Page ***********************-->
+        <div data-role="page" id="newgoal" data-theme="b">
+            <div data-role="header" data-position="inline">
+                 <a data-icon="arrow-l" class="back" id="btnstyle" data-rel="back" back-btn="true">Back</a>
+                <h1>Dormancy</h1>
+                <a href="#prof1" id="btnstyle" class="ui-btn ui-btn-right ui-icon-user ui-btn-icon-right">115</a>
+            </div>
+            <div role="content" class="ui-content">
+
+                <div id="picker">
+                    <p> Set New Goal
+
+                <form>
+                    <label for="time-1">Time:</label>
+                    <input type="time" data-clear-btn="false" name="time-1" id="time-1" value="">
+                    <label for="text-1">Goal Name:</label>
+                     <input type="text" name="text-1" id="text-1" value="">
+
+                </form>
+
+                </div>
+
+               <a href="#saved" id="savegoalbtn" class="ui-btn" data-rel="popup">Save</a>
+
+                <div data-role="popup" id="saved" class="ui-content" data-position-to="window" style="max-width:270px;">
+                        <br><p> Your new goal has been saved!</p>
+                        <br><br>
+                        <a href="#goals" id="backsavegoalbtn" class="ui-btn">Back to Goals</a>
+
+                </div>
+                 <br> <br>  <br> <br>  <br> <br>  <br> <br>  <br> <br> 
+
+            </div>
+            <div data-role="footer">
+            <div data-role="navbar" class = "navbar">
+                <ul>
+                    <li> <a href="#feed"id="navlink"  data-icon="home">Friends</a>
+                    <li> <a href="#checkin2" id="navlink"  data-rel="popup" data-icon="clock">Check In</a>
+                          <div data-role="popup" data-overlay-theme="a" id="checkin2" class="ui-content" data-position-to="window" style="max-width:270px;">
+                                <p> <b>Goodnight!</b>
+                                <p>You checked in at 11:30pm</p>
+                                <p> You got 5 points! </p>
+                                <a href="#newgoal" id="backfrompop" class="ui-btn">Undo</a>
+                                <a href="#newgoal" id="backfrompop" class="ui-btn">Goodnight!</a>
+                        </div>
+                    <li> <a href="#goals" id="current" data-icon="bullets">My Goals</a>
+                </ul>
+            </div>
+            </div>
+        </div>
+
+        <!-- ************************Start of REM Page ***********************-->
+        <div data-role="page" id="rem" data-theme="b">
+            <div data-role="header" data-position="inline">
+                <a data-icon="arrow-l" class="back" id="btnstyle" data-rel="back" back-btn="true">Back</a>
+                <h1>Dormancy</h1>
+                <a href="#prof1" id="btnstyle" class="ui-btn ui-btn-right ui-icon-user ui-btn-icon-right">115</a>
+            </div>
+            <div role="content" class="ui-content">
+
+            <p style="text-align: center;"> REM Calculator
+
+            <div id="picker">
+                <p> When do you want to wake up?
+
+            <form>
+                <!--<label for="time-1"></label>
+                <input type="time" data-clear-btn="false" name="time-1" id="myTime" value=""> -->
+                <label for="time-1"></label>
+                 <input type="text" name="time-1" id="myTime" value="">
+            </form>
+
+            <p> Be sure to enter your time in this format: "10:30 AM" </p>
+
+            </div>
+
+            <a href="#calculate" onclick="calculate()" id="calcbtn" class="ui-btn">Calculate</a>
+
+
+            <script>
+
+            function calculate() {
+                var x = document.getElementById("myTime").value; //gets input
+                if (x=="") {document.getElementById("calcresults").innerHTML = "Oops! We could not calculate. Please make sure your time is in the correct format so it looks like this: 10:30 AM!" //error handling
+
+                }else{
+                var timeArr = x.split(":"); //gets hour, minute and am/pm separately
+                var timeArr2 = timeArr[1].split(" ");
+
+                timeArr2[1]=timeArr2[1].toUpperCase(); //converts am/pm to uppercase so both cases are handled
+
+                var ampm1 = timeArr2[1]; //beginning of calculating first displayed time
+                var hr1neg = (Number(timeArr[0]) - Number(9)); //subtracting nine hours
+                var hr1 = 0; //empty var
+
+                if (hr1neg < 0) { //if user inputted hour is less than nine, the first displayed time
+                    hr1 = 12 + hr1neg ; //will be before midnight, so have to convert from AM to PM
+
+                    if (timeArr2[1] == "AM") { //switching AM and PM
+                    ampm1 = "PM";
+                    }else if (timeArr2[1] == "PM") {
+                        ampm1 = "AM";
+                    }
+                } else { //otherwise, hour stays the same and will be after midnight
+                    hr1 = hr1neg;
+                }
+
+                if (hr1==0) { //if user enters exactly 9, 12AM or PM is displayed as 0, so convert to 12
+                    hr1=12;
+                };
+
+                var hr2neg = (Number(timeArr[0]) - Number(7)); //start of calculating second displayed time
+                var hr2 = 0; //empty hour var
+                var ampm2 = timeArr2[1];
+                var min2 = Number(timeArr2[0]);
+
+                if (min2 >= 30) { //for this time we need to also subtract 30 mins from user input time
+                    min2 = min2 - 30;
+                    
+                }else{
+                    min2 = 60 - (30 - min2); //keeps numbers from going negative 
+                };
+
+                if (hr2neg < 0) {
+                    hr2 = 12 + hr2neg ;
+
+                    if (timeArr2[1] == "AM") {
+                    ampm2 = "PM";
+                    }else if (timeArr2[1] == "PM") {
+                        ampm2 = "AM";
+                    }
+                } else {
+                    hr2 = hr2neg;
+                };
+
+                if (min2 < 10) { //if minute is less than 10, it will be one digit which looks weird, so we add
+                    min2 = "0"+String(min2); // a leading 0
+
+                };
+
+                if (hr2==0) { //converting 0 to 12
+                    hr2=12;
+                };
+
+                var ampm3 = timeArr2[1]; //start of third displayed time
+                var hr3neg = (Number(timeArr[0]) - Number(6));
+                var hr3 = 0;
+
+                if (hr3neg < 0) {
+                    hr3 = 12 + hr3neg ;
+
+                    if (timeArr2[1] == "AM") {
+                    ampm3 = "PM";
+                    }else if (timeArr2[1] == "PM") {
+                        ampm3 = "AM";
+                    }
+                } else {
+                    hr3 = hr3neg;
+                }
+
+                if (hr3==0) {
+                    hr3=12;
+                };
+
+                
+
+
+                var resultString1 = hr1 + ":" + timeArr2[0] + " " + ampm1;
+                var resultString2 = hr2 + ":" + min2 + " " + ampm2;
+                var resultString3 = hr3 + ":" + timeArr2[0] + " " + ampm3;
+
+                document.getElementById("calcresults").innerHTML = resultString1.bold()+ " or " +resultString2.bold() + " or " + resultString3.bold()   ;
+            }}
+
+            </script>
+            
+                 <br> <br>  <br> <br>  <br> <br>  <br> <br>  <br> 
+            </div>
+            <div data-role="footer">
+            <div data-role="navbar" class = "navbar">
+                <ul>
+                    <li> <a href="#feed" id="navlink" data-icon="home">Friends</a>
+                    <li> <a href="#checkin3" id="navlink"  data-rel="popup" data-icon="clock">Check In</a>
+                          <div data-role="popup" data-overlay-theme="a" id="checkin3" class="ui-content" data-position-to="window" style="max-width:270px;">
+                                <p> <b>Goodnight!</b>
+                                <p>You checked in at 11:30pm</p>
+                                <p> You got 5 points! </p>
+                                <a href="#rem" id="backfrompop" class="ui-btn">Undo</a>
+                                <a href="#rem" id="backfrompop" class="ui-btn">Goodnight!</a>
+                        </div>
+                    <li> <a href="#goals" id="current" data-icon="bullets">My Goals</a>
+                </ul>
+            </div>
+            </div>
+        </div>
+
+        <!-- ************************Start of REM Calculator Results Page ***********************-->
+        <div data-role="page" id="calculate" data-theme="b">
+            <div data-role="header" data-position="inline">
+                <a data-icon="arrow-l" class="back" id="btnstyle" data-rel="back" back-btn="true">Back</a>
+                <h1>Dormancy</h1>
+                <a href="#prof1" id="btnstyle" class="ui-btn ui-btn-right ui-icon-user ui-btn-icon-right">115</a>
+            </div>
+
+            <div role="content" class="ui-content">
+
+                <p style="text-align: center;"> REM Calculator <br> <br></p>
+                <p style="text-align: center;">You should go to sleep at... <br></p>
+                <p style="text-align: center;" id ="calcresults"> <br><br> </p>
+                <p style="text-align: center;">A good night's sleep consists of 5-6 complete sleep cycles. Falling asleep at one of the above times will give you the best sleep and allow you to wake up in between your REM sleep cycles, leaving you refreshed and ready to start your day! <br></p>
+                <a href="#rem" id="tryagain" class="ui-btn">Try Again With A Different Time</a>
+            
+            <br><br><br><br>
+            </div>
+
+            
+            <div data-role="footer">
+            <div data-role="navbar">
+                <ul>
+                    <li> <a href="#feed" id="navlink" data-icon="home">Friends</a>
+                    <li> <a href="#checkin4"id="navlink"  data-rel="popup" data-icon="clock">Check In</a>
+                          <div data-role="popup" data-overlay-theme="a" id="checkin4" class="ui-content" data-position-to="window" style="max-width:270px;">
+                                <p> <b>Goodnight!</b>
+                                <p>You checked in at 11:30pm</p>
+                                <p> You got 5 points! </p>
+                                <a href="#calculate" id="backfrompop" class="ui-btn">Undo</a>
+                                <a href="#calculate" id="backfrompop" class="ui-btn">Goodnight!</a>
+                        </div>
+                    <li> <a href="#goals" id="current" data-icon="bullets">My Goals</a>
+                </ul>
+            </div>
+            </div>
+        </div>
+        
+        
+              <!-- ***********************PROF 1 ***********************-->
+            <div data-role="page" id="prof1" data-theme="b">
+            <div data-role="header" data-position="inline">
+                <a data-icon="arrow-l" class="back" id="btnstyle" data-rel="back" back-btn="true">Back</a>
+                <h1>Dormancy</h1>
+                <a href="#stats" id="btnstyle" class="ui-btn ui-btn-right">115  <i class="fa fa-bar-chart" aria-hidden="true"></i> </a>
+            </div>
+                
+            <div role="content" class="ui-content" align="center">
+                <h2>Michelle Gelberger</h2>
+                <img id="profpic" src="michelle.jpg" height="300">
+                <h4>Your Badges</h4>
+                <div id="badges"class="ui-grid-c">
+                    <div class="ui-block-a"><img src="medal.png" height="25"></div>
+                    <div class="ui-block-b"><img src="sun.png" height="25"></div>
+                    <div class="ui-block-c"><img src="up.png" height="25"></div>
+                    <div class="ui-block-d"><img src="star.png" height="25"></div>
+                </div><!-- /grid-b -->
+                <h4>About Michelle</h4>
+                <ul data-role="listview" id="proftext" data-inset="true">
+                    <li id="profbg"><p>Characteristics: Night owl, college student</p>
+                    <p>Active Member Since: September 10th, 2015
+                        <p>Current Goal Streak: 7 days</li>
+                </ul>
+                
+                <br><br>
+            </div><!-- /content -->
+
+           <div data-role="footer">
+            <div data-role="navbar">
+                <ul>
+                    <li> <a href="#feed" id="navlink" data-icon="home">Friends</a>
+                    <li> <a href="#checkin7"id="navlink"  data-rel="popup" data-icon="clock">Check In</a>
+                          <div data-role="popup" data-overlay-theme="a" id="checkin7" class="ui-content" data-position-to="window" style="max-width:270px;">
+                                <p> <b>Goodnight!</b>
+                                <p>You checked in at 11:30pm</p>
+                                <p> You got 5 points! </p>
+                                <a href="#calculate" id="backfrompop" class="ui-btn">Undo</a>
+                                <a href="#calculate" id="backfrompop" class="ui-btn">Goodnight!</a>
+                        </div>
+                    <li> <a href="#goals" id="navlink" data-icon="bullets">My Goals</a>
+                </ul>
+            </div>
+            </div>
+        </div>
+
+        <!-- ***********************PROF 2 ***********************-->
+            <div data-role="page" id="prof2" data-theme="b">
+            <div data-role="header" data-position="inline">
+                <a data-icon="arrow-l" class="back" id="btnstyle" data-rel="back" back-btn="true">Back</a>
+                <h1>Dormancy</h1>
+                <a href="#stats" id="btnstyle" class="ui-btn ui-btn-right">115  <i class="fa fa-bar-chart" aria-hidden="true"></i> </a>
+            </div>
+                
+            <div role="content" class="ui-content" align="center">
+                <h2>Sarah Moss</h2>
+                <img id="profpic" src="sarah.jpg" height="300">
+                <h4>Your Badges</h4>
+                <div id="badges"class="ui-grid-c">
+                    <div class="ui-block-a"><img src="medal.png" height="25"></div>
+                    <div class="ui-block-b"><img src="sun.png" height="25"></div>
+                    <div class="ui-block-c"><img src="up.png" height="25"></div>
+                    <div class="ui-block-d"><img src="star.png" height="25"></div>
+                </div><!-- /grid-b -->
+                <h4>About Sarah</h4>
+                <ul data-role="listview" id="proftext" data-inset="true">
+                    <li id="profbg"><p>Characteristics: Night owl, college student</p>
+                    <p>Active Member Since: February 19th, 2016
+                        <p>Current Goal Streak: 3 days</li>
+                </ul>
+                
+                <br><br>
+            </div><!-- /content -->
+
+           <div data-role="footer">
+            <div data-role="navbar">
+                <ul>
+                    <li> <a href="#feed" id="navlink" data-icon="home">Friends</a>
+                    <li> <a href="#checkin7"id="navlink"  data-rel="popup" data-icon="clock">Check In</a>
+                          <div data-role="popup" data-overlay-theme="a" id="checkin7" class="ui-content" data-position-to="window" style="max-width:270px;">
+                                <p> <b>Goodnight!</b>
+                                <p>You checked in at 11:30pm</p>
+                                <p> You got 5 points! </p>
+                                <a href="#calculate" id="backfrompop" class="ui-btn">Undo</a>
+                                <a href="#calculate" id="backfrompop" class="ui-btn">Goodnight!</a>
+                        </div>
+                    <li> <a href="#goals" id="navlink" data-icon="bullets">My Goals</a>
+                </ul>
+            </div>
+            </div>
+        </div>
+
+        <!-- ***********************PROF 3 ***********************-->
+            <div data-role="page" id="prof3" data-theme="b">
+            <div data-role="header" data-position="inline">
+                <a data-icon="arrow-l" class="back" id="btnstyle" data-rel="back" back-btn="true">Back</a>
+                <h1>Dormancy</h1>
+                <a href="#stats" id="btnstyle" class="ui-btn ui-btn-right">115  <i class="fa fa-bar-chart" aria-hidden="true"></i> </a>
+            </div>
+                
+            <div role="content" class="ui-content" align="center">
+                <h2>Belle Noonan</h2>
+                <img id="profpic" src="belle.jpg" height="300">
+                <h4>Your Badges</h4>
+                <div id="badges"class="ui-grid-c">
+                    <div class="ui-block-a"><img src="medal.png" height="25"></div>
+                    <div class="ui-block-b"><img src="sun.png" height="25"></div>
+                    <div class="ui-block-c"><img src="up.png" height="25"></div>
+                    <div class="ui-block-d"><img src="star.png" height="25"></div>
+                </div><!-- /grid-b -->
+                <h4>About Belle</h4>
+                <ul data-role="listview" id="proftext" data-inset="true">
+                    <li id="profbg"><p>Characteristics: Early riser, college student</p>
+                    <p>Active Member Since: June 15th, 2015
+                        <p>Current Goal Streak: 12 days</li>
+                </ul>
+                
+                <br><br>
+            </div><!-- /content -->
+
+           <div data-role="footer">
+            <div data-role="navbar">
+                <ul>
+                    <li> <a href="#feed" id="navlink" data-icon="home">Friends</a>
+                    <li> <a href="#checkin7"id="navlink"  data-rel="popup" data-icon="clock">Check In</a>
+                          <div data-role="popup" data-overlay-theme="a" id="checkin7" class="ui-content" data-position-to="window" style="max-width:270px;">
+                                <p> <b>Goodnight!</b>
+                                <p>You checked in at 11:30pm</p>
+                                <p> You got 5 points! </p>
+                                <a href="#calculate" id="backfrompop" class="ui-btn">Undo</a>
+                                <a href="#calculate" id="backfrompop" class="ui-btn">Goodnight!</a>
+                        </div>
+                    <li> <a href="#goals" id="navlink" data-icon="bullets">My Goals</a>
+                </ul>
+            </div>
+            </div>
+        </div>
+
+        <!-- ***********************PROF 4 ***********************-->
+            <div data-role="page" id="prof4" data-theme="b">
+            <div data-role="header" data-position="inline">
+                <a data-icon="arrow-l" class="back" id="btnstyle" data-rel="back" back-btn="true">Back</a>
+                <h1>Dormancy</h1>
+                <a href="#stats" id="btnstyle" class="ui-btn ui-btn-right">115  <i class="fa fa-bar-chart" aria-hidden="true"></i> </a>
+            </div>
+                
+            <div role="content" class="ui-content" align="center">
+                <h2>Zoe Swarzenski</h2>
+                <img id="profpic" src="zoe.jpg" height="300">
+                <h4>Your Badges</h4>
+                <div id="badges"class="ui-grid-c">
+                    <div class="ui-block-a"><img src="medal.png" height="25"></div>
+                    <div class="ui-block-b"><img src="sun.png" height="25"></div>
+                    <div class="ui-block-c"><img src="up.png" height="25"></div>
+                    <div class="ui-block-d"><img src="star.png" height="25"></div>
+                </div><!-- /grid-b -->
+                <h4>About Zoe</h4>
+                <ul data-role="listview" id="proftext" data-inset="true">
+                    <li id="profbg"><p>Characteristics: Avid napper, college student</p>
+                    <p>Active Member Since: March 20th, 2016
+                        <p>Current Goal Streak: 0 days</li>
+                </ul>
+                
+                <br><br>
+            </div><!-- /content -->
+
+           <div data-role="footer">
+            <div data-role="navbar">
+                <ul>
+                    <li> <a href="#feed" id="navlink" data-icon="home">Friends</a>
+                    <li> <a href="#checkin7"id="navlink"  data-rel="popup" data-icon="clock">Check In</a>
+                          <div data-role="popup" data-overlay-theme="a" id="checkin7" class="ui-content" data-position-to="window" style="max-width:270px;">
+                                <p> <b>Goodnight!</b>
+                                <p>You checked in at 11:30pm</p>
+                                <p> You got 5 points! </p>
+                                <a href="#calculate" id="backfrompop" class="ui-btn">Undo</a>
+                                <a href="#calculate" id="backfrompop" class="ui-btn">Goodnight!</a>
+                        </div>
+                    <li> <a href="#goals" id="navlink" data-icon="bullets">My Goals</a>
+                </ul>
+            </div>
+            </div>
+        </div>
+
+        <!-- ***********************PROF 5 ***********************-->
+            <div data-role="page" id="prof5" data-theme="b">
+            <div data-role="header" data-position="inline">
+                <a data-icon="arrow-l" class="back" id="btnstyle" data-rel="back" back-btn="true">Back</a>
+                <h1>Dormancy</h1>
+                <a href="#stats" id="btnstyle" class="ui-btn ui-btn-right">115  <i class="fa fa-bar-chart" aria-hidden="true"></i> </a>
+            </div>
+                
+            <div role="content" class="ui-content" align="center">
+                <h2>Jeremy Lawrence</h2>
+                <img id="profpic" src="jeremy.jpg" height="300">
+                <h4>Your Badges</h4>
+                <div id="badges"class="ui-grid-c">
+                    <div class="ui-block-a"><img src="medal.png" height="25"></div>
+                    <div class="ui-block-b"><img src="sun.png" height="25"></div>
+                    <div class="ui-block-c"><img src="up.png" height="25"></div>
+                    <div class="ui-block-d"><img src="star.png" height="25"></div>
+                </div><!-- /grid-b -->
+                <h4>About Jeremy</h4>
+                <ul data-role="listview" id="proftext" data-inset="true">
+                    <li id="profbg"><p>Characteristics: Night owl, college student</p>
+                    <p>Active Member Since: April 15th, 2016
+                        <p>Current Goal Streak: 4 days</li>
+                </ul>
+                
+                <br><br>
+            </div><!-- /content -->
+
+           <div data-role="footer">
+            <div data-role="navbar">
+                <ul>
+                    <li> <a href="#feed" id="navlink" data-icon="home">Friends</a>
+                    <li> <a href="#checkin7"id="navlink"  data-rel="popup" data-icon="clock">Check In</a>
+                          <div data-role="popup" data-overlay-theme="a" id="checkin7" class="ui-content" data-position-to="window" style="max-width:270px;">
+                                <p> <b>Goodnight!</b>
+                                <p>You checked in at 11:30pm</p>
+                                <p> You got 5 points! </p>
+                                <a href="#calculate" id="backfrompop" class="ui-btn">Undo</a>
+                                <a href="#calculate" id="backfrompop" class="ui-btn">Goodnight!</a>
+                        </div>
+                    <li> <a href="#goals" id="navlink" data-icon="bullets">My Goals</a>
+                </ul>
+            </div>
+            </div>
+        </div>
+        
+            <!-- ***********************STATS ***********************-->
+            <div data-role="page" id="stats" data-theme="b">
+            <div data-role="header" data-position="inline">
+                <a data-icon="arrow-l" class="back" id="btnstyle" data-rel="back" back-btn="true">Back</a>
+                <h1>Dormancy</h1>
+                <a href="#prof1" id="btnstyle" class="ui-btn ui-btn-right ui-icon-user ui-btn-icon-right">115</a>
+            </div>
+                
+            <div role="content" class="ui-content" align="center">
+                <h2> Your Statistics</h2>
+                <div data-role="controlgroup"  data-type="horizontal">
+                    <a href="#social" id="tabbar" data-role="button">Social</a>
+                    <a href="#stats" id="tabcurrent" data-role="button">Stats</a>
+                    <a href="#progress" id="tabbar" data-role="button">Progress</a>
+                </div>
+
+                <ul data-role="listview" data-inset="true" id="statsList">
+                    <li id="statbg" style="text-align: center; padding:0">
+                        <h4>Sleep this week</h4>
+                        <img src="bar100.png" height="150">
+                    </li>
+                    <li id="statbg" style="text-align: center; padding:0">
+                        <h4>Goal streak</h4>
+                        <img src ="line100.png" height="150">
+                    </li>
+                </ul>
+            
+                <br><br>
+            </div><!-- /content -->
+
+            <div data-role="footer">
+            <div data-role="navbar">
+                <ul>
+                    <li> <a href="#feed" id="navlink" data-icon="home">Friends</a>
+                    <li> <a href="#checkin8"id="navlink"  data-rel="popup" data-icon="clock">Check In</a>
+                          <div data-role="popup" data-overlay-theme="a" id="checkin8" class="ui-content" data-position-to="window" style="max-width:270px;">
+                                <p> <b>Goodnight!</b>
+                                <p>You checked in at 11:30pm</p>
+                                <p> You got 5 points! </p>
+                                <a href="#calculate" id="backfrompop" class="ui-btn">Undo</a>
+                                <a href="#calculate" id="backfrompop" class="ui-btn">Goodnight!</a>
+                        </div>
+                    <li> <a href="#goals" id="navlink" data-icon="bullets">My Goals</a>
+                </ul>
+            </div>
+            </div>
+        </div>
+        
+
+            <!-- *********************** SOCIAL ***********************-->
+            <div data-role="page" id="social" data-theme="b">
+            <div data-role="header" data-position="inline">
+                <a data-icon="arrow-l" class="back" id="btnstyle" data-rel="back" back-btn="true">Back</a>
+                <h1>Dormancy</h1>
+                <a href="#prof1" id="btnstyle" class="ui-btn ui-btn-right ui-icon-user ui-btn-icon-right">115</a>
+            </div>
+                
+            <div role="content" class="ui-content" align="center">
+                <h2>Social Leaderboard</h2>
+                <div data-role="controlgroup" data-type="horizontal">
+                    <a href="#social" id="tabcurrent" data-role="button">Social</a>
+                    <a href="#stats" id="tabbar" data-role="button">Stats</a>
+                    <a href="#progress" id="tabbar" data-role="button">Progress</a>
+                </div>
+
+                <h4>Top of the week</h4>
+
+                <ul data-role="listview" data-inset="true">
+                    <li id="btnstyle">
+                        <h3>Sarah</h3>
+                        <h5 class="ui-li-aside">110</h5>
+                    </li>
+                    <li id="btnstyle">
+                        <h3>Michelle</h3>
+                        <h5 class="ui-li-aside">105</h5>
+                    </li>
+                    <li id="btnstyle">
+                        <h3>Belle</h3>
+                        <h5 class="ui-li-aside">95</h5>
+                    </li>
+                    <li id="btnstyle">
+                        <h3>Eileen</h3>
+                        <h5 class="ui-li-aside">90</h5>
+                    </li>
+                    <li id="btnstyle">
+                        <h3>Josh</h3>
+                        <h5 class="ui-li-aside">80</h5>
+                    </li>
+                    <li id="btnstyle">
+                        <h3>Alex</h3>
+                        <h5 class="ui-li-aside">75</h5>
+                    </li>
+                    <li id="btnstyle">
+                        <h3>Orit</h3>
+                        <h5 class="ui-li-aside">60</h5>
+                    </li>
+                    <li id="btnstyle">
+                        <h3>Christina</h3>
+                        <h5 class="ui-li-aside">55</h5>
+                    </li>
+                </ul>
+
+                <br><br>
+            </div><!-- /content -->
+
+             <div data-role="footer">
+            <div data-role="navbar">
+                <ul>
+                    <li> <a href="#feed" id="navlink" data-icon="home">Friends</a>
+                    <li> <a href="#checkin9"id="navlink"  data-rel="popup" data-icon="clock">Check In</a>
+                          <div data-role="popup" data-overlay-theme="a" id="checkin9" class="ui-content" data-position-to="window" style="max-width:270px;">
+                                <p> <b>Goodnight!</b>
+                                <p>You checked in at 11:30pm</p>
+                                <p> You got 5 points! </p>
+                                <a href="#calculate" id="backfrompop" class="ui-btn">Undo</a>
+                                <a href="#calculate" id="backfrompop" class="ui-btn">Goodnight!</a>
+                        </div>
+                    <li> <a href="#goals" id="navlink" data-icon="bullets">My Goals</a>
+                </ul>
+            </div>
+            </div>
+        </div>
+        
+            <!-- *********************** PROGRESS ***********************-->
+            <div data-role="page" id="progress" data-theme="b">
+            <div data-role="header" data-position="inline">
+                <a data-icon="arrow-l" class="back" id="btnstyle" data-rel="back" back-btn="true">Back</a>
+                <h1>Dormancy</h1>
+                <a href="#prof1" id="btnstyle" class="ui-btn ui-btn-right ui-icon-user ui-btn-icon-right">115</a>
+            </div>
+                
+            <div role="content" class="ui-content" align="center">
+                <h2>Progress</h2>
+                <div data-role="controlgroup" data-type="horizontal">
+                    <a href="#social" id="tabbar" data-role="button">Social</a>
+                    <a href="#stats" id="tabbar" data-role="button">Stats</a>
+                    <a href="#progress" id="tabcurrent" data-role="button">Progress</a>
+                </div>
+
+                <h4><b>30 points </b>until next badge</h4>
+                <img src="progress.png" width = "80%">
+
+                <ul data-role="listview" data-inset="true">
+                <li style="text-align: center; padding:0;">
+                <div id="statbg" class="ui-grid-b" style="padding-top: 10px;" >
+                    <div class="ui-block-a"><div class="ui-bar ui-bar-e" style="height:120px"><img src="medal.png"></div></div>
+                    <div class="ui-block-b"><div class="ui-bar ui-bar-e" style="height:120px"><img src="sun.png"></div></div>
+                    <div class="ui-block-c"><div class="ui-bar ui-bar-e" style="height:120px"><img src="up.png"></div></div>
+                    <div class="ui-block-a"><div class="ui-bar ui-bar-e" style="height:120px"><img src="star.png"></div></div>
+                    <div class="ui-block-b"><div class="ui-bar ui-bar-e" style="height:120px"><img src="medal.png"></div></div>
+                    <div class="ui-block-c"><div class="ui-bar ui-bar-e" style="height:120px"><img src="sun.png"></div></div>
+                    <div class="ui-block-a"><div class="ui-bar ui-bar-e" style="height:120px"><img src="up.png"></div></div>
+                    <div class="ui-block-b"><div class="ui-bar ui-bar-e" style="height:120px"><img src="star.png"></div></div>
+                    <div class="ui-block-c"><div class="ui-bar ui-bar-e" style="height:120px"><img src="medal.png"></div></div>
+                </div>
+                </li>
+                </ul>
+
+                <br><br>
+            </div><!-- /content -->
+
+            <div data-role="footer">
+            <div data-role="navbar">
+                <ul>
+                    <li> <a href="#feed" id="navlink" data-icon="home">Friends</a>
+                    <li> <a href="#checkin10"id="navlink"  data-rel="popup" data-icon="clock">Check In</a>
+                          <div data-role="popup" data-overlay-theme="a" id="checkin10" class="ui-content" data-position-to="window" style="max-width:270px;">
+                                <p> <b>Goodnight!</b>
+                                <p>You checked in at 11:30pm</p>
+                                <p> You got 5 points! </p>
+                                <a href="#calculate" id="backfrompop" class="ui-btn">Undo</a>
+                                <a href="#calculate" id="backfrompop" class="ui-btn">Goodnight!</a>
+                        </div>
+                    <li> <a href="#goals" id="navlink" data-icon="bullets">My Goals</a>
+                </ul>
+            </div>
+            </div>
+        
+            </div>
+            
+        
+    </body>
+</html>

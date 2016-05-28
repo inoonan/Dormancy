@@ -1,0 +1,145 @@
+/*
+ * Dormancy CSS
+ */
+
+.ui-content {
+	background-color: #1b2137;
+	color: #fff9db;
+}
+
+h2 {
+	color: #fff9db;
+
+}
+
+div.ui-header.ui-bar-inherit{
+	background-color: #3c4f6d;
+	color: #ffd070;
+}
+
+.ui-navbar{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+#navlink{
+	background-color: #2b3750;
+	color: #ffd070;
+}
+
+#current{
+	background-color: #4d5f80;
+	color: #ffd070;
+}
+
+#tabbar, #btnstyle, #tryagain, #backfrompop , #backsavegoalbtn{
+	background-color: #4d5f80;
+	color: #fff9db;
+}
+
+
+#tabcurrent {
+    background-color: #3c4f6d;
+}
+
+#checkstyle, #profbg{
+	background-color: #2b3750;
+	color: #fff9db;
+}
+
+#time-1, #text-1, #myTime, #statbg{
+	background-color: #273249;
+	color: #fff9db;
+}
+
+.ui-btn-inner{
+    background-color: black;
+}
+
+#badges {
+	background-color: #273249;
+	color: #fff9db;
+	padding: 10px;
+
+}
+
+#rempopup, #saved, #checkin1, #checkin2, #checkin3, #checkin4, #checkin5, #checkin6 , #checkin7 , #checkin8, #checkin9, #checkin10{
+	background-color: #1b2137;
+	color: #fff9db;
+    text-align: center;
+}
+
+#picker {
+	width: 70%;
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+
+#rembtn  {
+	width: 50%;
+	margin-left: 11%;
+	background-color: #4d5f80;
+    
+}
+
+#calcbtn {
+	width: 60%;
+	margin-right: auto;
+	margin-left: auto;
+	background-color: #4d5f80;
+    
+}
+
+
+#newgoalbtn{
+	width: 70%;
+	margin-right: auto;
+	margin-left: auto;
+	background-color: #4d5f80;
+}
+
+#savegoalbtn {
+	width: 20%;
+	margin-right: auto;
+	margin-left: auto;
+	background-color: #4d5f80;
+}
+
+#calculatebtn {
+	width: 40%;
+	margin-right: auto;
+	margin-left: auto;
+	background-color: #4d5f80;
+}
+
+form {
+	width: 75%;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+#feed h2 {
+    text-align: center;
+    margin: 5px;
+}
+.ui-grid-solo {
+    border:1px solid white;
+    padding: 4px;
+}
+
+#explore {
+    margin: 2px;
+}
+
+#checkin1 p {
+    text-align: center;
+}
+
+#profpic {
+    border-radius: 50px;
+    border: 2px solid #3c4f6d;
+    
+}
